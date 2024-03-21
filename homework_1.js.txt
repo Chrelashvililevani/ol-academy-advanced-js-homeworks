@@ -1,0 +1,20 @@
+const getTable = (row, col) => {
+    let table = '';
+    let count = 1;
+
+    for (let i = 0; i < row; i++) {
+        let rowData = '';
+        for (let j = 0; j < col; j++) {
+            rowData += count + '\t';
+            count += row; // Increment by the number of rows to move to the next column
+        }
+        table += rowData.trim() + '\n';
+        count = i + 2; // Reset count for the next row
+    }
+
+    return table;
+}
+
+let row = 4;
+let col = 5;
+console.log(getTable(row, col));
