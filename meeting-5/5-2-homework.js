@@ -11,7 +11,7 @@ function displayError(errorMessage) {
 }
 
 function loginUser(email, password, callback, errorCallback) {
-    if (!email === false && !usersDB[email] === false) { 
+    if (usersDB[email]) { 
       setTimeout(() => {
       console.log("Now we have the data of user:", email);
       callback({ userEmail: email });
@@ -35,7 +35,7 @@ function getUserVideos(email, callback, errorCallback) {
 }
 
 function videoDetails(video, callback) {
-    if (!video.title === false) {
+    if (video.title) {
     setTimeout(() => {
         callback(video.title);
       }, 2000);  
@@ -71,6 +71,6 @@ const getPassedUsersFirstVideoTitle = (user) => {
 
 }
 
-getPassedUsersFirstVideoTitle("user3@hw.js");
+getPassedUsersFirstVideoTitle("user4@hw.js");
 
 console.log("Finish");

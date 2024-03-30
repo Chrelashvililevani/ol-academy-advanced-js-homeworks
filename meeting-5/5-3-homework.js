@@ -12,7 +12,7 @@ function displayError(errorMessage) {
 
 function loginUser(email, password) {
   return new Promise((resolve, reject) => {
-    if (!email === false && !usersDB[email] === false) {
+    if (usersDB[email]) {
       setTimeout(() => {
         console.log("Now we have the data of user:", email);
         resolve({ userEmail: email });
@@ -41,7 +41,7 @@ function getUserVideos(email) {
 
 function videoDetails(video) {
   return new Promise((resolve, reject) => {
-    if (!video.title === false) {
+    if (video.title) {
       setTimeout(() => {
         resolve(video.title);
       }, 2000);

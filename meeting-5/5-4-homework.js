@@ -12,7 +12,7 @@ function displayError(errorMessage) {
 
 function loginUser(email, password) {
   return new Promise((resolve, reject) => {
-    if (!email === false && !usersDB[email] === false) {
+    if (usersDB[email]) {
       setTimeout(() => {
         console.log("Now we have the data of user:", email);
         resolve({ userEmail: email });
@@ -41,7 +41,7 @@ function getUserVideos(email) {
 
 function videoDetails(video) {
   return new Promise((resolve, reject) => {
-    if (!video.title === false) {
+    if (!video.title) {
       setTimeout(() => {
         resolve(video.title);
       }, 2000);
@@ -53,7 +53,7 @@ function videoDetails(video) {
   });
 }
 
-const getPassedUsersFirstVideoTitle = async (user) => {
+async function getPassedUsersFirstVideoTitle (user) {
     try {
       const users = await loginUser(user, 1234);
       console.log("user", users);
@@ -68,6 +68,6 @@ const getPassedUsersFirstVideoTitle = async (user) => {
     
   
 
-getPassedUsersFirstVideoTitle("user1@hw.js");
+getPassedUsersFirstVideoTitle("user2@hw.js");
 
 console.log("Finish");
