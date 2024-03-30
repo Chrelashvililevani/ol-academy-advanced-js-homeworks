@@ -41,7 +41,7 @@ function getUserVideos(email) {
 
 function videoDetails(video) {
   return new Promise((resolve, reject) => {
-    if (!video.title) {
+    if (video.title) {
       setTimeout(() => {
         resolve(video.title);
       }, 2000);
