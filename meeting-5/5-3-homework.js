@@ -73,6 +73,6 @@ const getPassedUsersFirstVideoTitle = (user) => {
   
   
 
-getPassedUsersFirstVideoTitle("user2@hw.js");
+getPassedUsersFirstVideoTitle("user1@hw.js");
 
 console.log("Finish");

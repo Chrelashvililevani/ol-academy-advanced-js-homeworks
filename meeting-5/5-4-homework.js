@@ -68,6 +68,6 @@ async function getPassedUsersFirstVideoTitle (user) {
     
   
 
-getPassedUsersFirstVideoTitle("user2@hw.js");
+getPassedUsersFirstVideoTitle("user4@hw.js");
 
 console.log("Finish");
